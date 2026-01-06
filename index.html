@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angels Junior School - 7 Days to Enroll for 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f9ff 0%, #e8f1ff 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: linear-gradient(90deg, #1a4a8f 0%, #2a6bc7 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(26, 74, 143, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ffcc00 0%, #ffdd44 100%);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .logo-img {
+            width: 250px;
+            height: 250px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+        
+        .campaign-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .countdown-box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border-top: 6px solid #2a6bc7;
+        }
+        
+        .countdown-title {
+            color: #1a4a8f;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .countdown-subtitle {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 90px;
+            position: relative;
+        }
+        
+        .countdown-value {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a4a8f;
+            line-height: 1;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .highlight-box {
+            background: white;
+            border-radius: 15px;
+            padding: 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        .campaign-header {
+            background: linear-gradient(90deg, #1a4a8f 0%, #2a6bc7 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .campaign-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .campaign-header p {
+            opacity: 0.9;
+        }
+        
+        .current-day-badge {
+            display: inline-block;
+            background: #ffcc00;
+            color: #1a4a8f;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .today-highlight {
+            padding: 35px 30px;
+            text-align: center;
+            border-bottom: 2px dashed #eee;
+        }
+        
+        .today-title {
+            color: #1a4a8f;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .today-description {
+            font-size: 1.2rem;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            line-height: 1.7;
+        }
+        
+        .today-icon {
+            font-size: 3.5rem;
+            color: #2a6bc7;
+            margin-bottom: 20px;
+        }
+        
+        .day-counter {
+            display: inline-flex;
+            align-items: center;
+            background: #f0f7ff;
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-top: 15px;
+        }
+        
+        .current-day-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a4a8f;
+            margin-right: 10px;
+        }
+        
+        .day-counter-text {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .upcoming-container {
+            padding: 30px;
+        }
+        
+        .upcoming-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .upcoming-header h3 {
+            color: #1a4a8f;
+            font-size: 1.5rem;
+        }
+        
+        .toggle-upcoming {
+            background: #f0f7ff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: #1a4a8f;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .toggle-upcoming:hover {
+            background: #e1eeff;
+        }
+        
+        .upcoming-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .upcoming-highlights.expanded {
+            max-height: 1000px;
+        }
+        
+        .upcoming-day {
+            background: #f9fbff;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #ddd;
+            transition: all 0.3s;
+        }
+        
+        .upcoming-day.next {
+            border-left-color: #ffcc00;
+            background: #fff9e6;
+        }
+        
+        .upcoming-day.future {
+            opacity: 0.7;
+        }
+        
+        .upcoming-day-number {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .upcoming-day-title {
+            color: #1a4a8f;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .upcoming-day-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .campaign-progress {
+            margin-top: 25px;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #eef4ff;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2a6bc7 0%, #4a8be8 100%);
+            width: 10%; /* Will be updated by JS */
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            border-top: 6px solid #28a745;
+        }
+        
+        .cta-title {
+            color: #1a4a8f;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #28a745 0%, #34ce57 100%);
+            color: white;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+            background: linear-gradient(90deg, #23923d 0%, #2db84d 100%);
+        }
+        
+        .cta-button i {
+            margin-left: 8px;
+        }
+        
+        .registration-note {
+            background: #fff9e6;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 25px;
+            border-left: 4px solid #ffcc00;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .countdown-value {
+                font-size: 2.2rem;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 12px;
+            }
+            
+            .today-title {
+                font-size: 1.5rem;
+            }
+            
+            .today-description {
+                font-size: 1.1rem;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .upcoming-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+              <img src="images/Angels_logo.jpeg" class="logo-img">
+            </div>
+            <h1>Angels Junior School 2026 Enrollment</h1>
+            <p>7-days left to discover what makes our school exceptional. A new reason to choose us revealed each day!</p>
+        </div>
+        
+        <div class="campaign-container">
+            <div class="countdown-box">
+                <h2 class="countdown-title">Registration Closes In:</h2>
+                <p class="countdown-subtitle">Secure your child's place before time runs out</p>
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                <p>Don't miss the opportunity to secure a place for your child in our nurturing learning community.</p>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="campaign-header">
+                    <h2>7-Day Enrollment Countdown</h2>
+                    <p>A new compelling reason to choose Angels Junior School each day</p>
+                    <div class="current-day-badge" id="current-day-badge">Day 1 of 7</div>
+                </div>
+                
+                <div class="today-highlight">
+                    <div class="today-icon" id="today-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h2 class="today-title" id="today-title">Day 1: Academic Excellence</h2>
+                    <p class="today-description" id="today-description">
+                        Our curriculum is designed to challenge and inspire young minds. With a student-teacher ratio of 12:1, we provide personalized attention that fosters intellectual growth and a love for learning.
+                    </p>
+                    
+                    <div class="day-counter">
+                        <span class="current-day-number" id="current-day">1</span>
+                        <span class="day-counter-text">day revealed of 7-day campaign</span>
+                    </div>
+                </div>
+                
+                <div class="upcoming-container">
+                    <div class="upcoming-header">
+                        <h3><i class="fas fa-calendar-day"></i> Upcoming Daily Highlights</h3>
+                        <button class="toggle-upcoming" id="toggle-upcoming">
+                            <i class="fas fa-chevron-down"></i> Show All
+                        </button>
+                    </div>
+                    
+                    <div class="campaign-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span>Campaign Progress</span>
+                            <span id="progress-text">1/7 days</span>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-highlights" id="upcoming-highlights">
+                        <!-- Filled by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2 class="cta-title">See Our School in Action!</h2>
+            <p>Experience our nurturing environment, meet our dedicated teachers, and explore our state-of-the-art facilities firsthand.</p>
+            <p>Book your personal tour today and discover why Angels Junior School is the perfect choice for your child's education.</p>
+            
+            <button class="cta-button" id="bookTourBtn">
+                <i class="fas fa-calendar-check"></i> Book a Tour Today
+            </button>
+            
+            <div class="registration-note">
+                <p><strong>Limited Spaces Available:</strong> We maintain small class sizes to ensure personalized attention for every child. Complete your registration soon to guarantee your child's place for 2026.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Angels Junior School • Enrolling for ECD A to Grade 7 for 2026</p>
+            <p>Contact: admin@angelsjuniorschool.com • Phone: +263 78 793 3901</p>
+            <p>© 2026 Angels Junior School. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Daily Highlight Content for 10-day campaign
+        const dailyHighlights = [
+            {
+                day: 1,
+                title: "Day 1: Academic Excellence",
+                description: "Our curriculum is designed to challenge and inspire young minds. With a student-teacher ratio of 12:1, we provide personalized attention that fosters intellectual growth and a love for learning.",
+                icon: "fas fa-graduation-cap"
+            },
+            {
+                day: 2,
+                title: "Day 2: Extracurricular Activities",
+                description: "From robotics club to choir, sports teams to debate society, we offer over 30 extracurricular activities that help students discover their passions and develop well-rounded personalities.",
+                icon: "fas fa-futbol"
+            },
+            {
+                day: 3,
+                title: "Day 3: Pastoral Care & Wellbeing",
+                description: "Our dedicated wellbeing team ensures every child feels safe, valued, and supported. We prioritize emotional intelligence and resilience alongside academic achievement.",
+                icon: "fas fa-heart"
+            },
+            {
+                day: 4,
+                title: "Day 4: State-of-the-Art Facilities",
+                description: "Our campus features modern science labs, a fully equipped library, sports fields, and creative arts studios designed to enhance the learning experience at every level.",
+                icon: "fas fa-building"
+            },
+            {
+                day: 5,
+                title: "Day 5: Vibrant School Community",
+                description: "Join our close-knit community of engaged parents, dedicated teachers, and enthusiastic students who collaborate to create a positive and inclusive school environment.",
+                icon: "fas fa-users"
+            },
+            {
+                day: 6,
+                title: "Day 6: Technology Integration",
+                description: "We prepare students for a digital future with smart classrooms, coding classes from Grade 1, and responsible technology use integrated across all subjects.",
+                icon: "fas fa-laptop-code"
+            },
+            {
+                day: 7,
+                title: "Day 7: Creative Arts Program",
+                description: "Our comprehensive arts program nurtures creativity through visual arts, music, drama, and dance, with annual productions and exhibitions showcasing student talent.",
+                icon: "fas fa-palette"
+            },
+            {
+                day: 8,
+                title: "Day 8: Sports & Physical Development",
+                description: "With professional coaching in swimming, soccer, basketball, and athletics, we promote physical fitness, teamwork, and sportsmanship for all students.",
+                icon: "fas fa-running"
+            },
+            {
+                day: 9,
+                title: "Day 9: Global Citizenship",
+                description: "Through international partnerships, language programs, and cultural exchanges, we develop globally-minded students prepared to contribute to an interconnected world.",
+                icon: "fas fa-globe-americas"
+            },
+            {
+                day: 10,
+                title: "Day 10: Enrollment Information",
+                description: "Today is the final day to secure your child's place! Complete the online registration form or visit our admissions office before the deadline.",
+                icon: "fas fa-file-signature"
+            }
+        ];
+
+        // Calculate current campaign day (1-10) based on countdown
+        // For demo, we'll simulate day 3. In production, you'd calculate based on actual date
+        const TOTAL_CAMPAIGN_DAYS = 10;
+        let currentCampaignDay = 3; // Change this to test different days
+        
+        // Countdown Timer Logic
+        const countdownDate = new Date();
+        countdownDate.setDate(countdownDate.getDate() + (TOTAL_CAMPAIGN_DAYS - currentCampaignDay + 1)); // Set based on current day
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            
+            // Calculate days, hours, minutes, seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Update display
+            document.getElementById("days").textContent = days.toString().padStart(2, '0');
+            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+            
+            // If countdown is finished
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector(".countdown-title").textContent = "Registration Has Closed!";
+                document.querySelector(".countdown-timer").innerHTML = "<p>Please contact admissions for late enrollment inquiries.</p>";
+            }
+        }
+        
+        // Initial call and set interval
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // Function to update the campaign display based on current day
+        function updateCampaignDisplay() {
+            // Update today's highlight
+            const todayHighlight = dailyHighlights[currentCampaignDay - 1];
+            document.getElementById("today-title").textContent = todayHighlight.title;
+            document.getElementById("today-description").textContent = todayHighlight.description;
+            document.getElementById("today-icon").innerHTML = `<i class="${todayHighlight.icon}"></i>`;
+            
+            // Update current day badge and counter
+            document.getElementById("current-day-badge").textContent = `Day ${currentCampaignDay} of ${TOTAL_CAMPAIGN_DAYS}`;
+            document.getElementById("current-day").textContent = currentCampaignDay;
+            
+            // Update progress bar
+            const progressPercent = (currentCampaignDay / TOTAL_CAMPAIGN_DAYS) * 100;
+            document.getElementById("progress-fill").style.width = `${progressPercent}%`;
+            document.getElementById("progress-text").textContent = `${currentCampaignDay}/${TOTAL_CAMPAIGN_DAYS} days`;
+            
+            // Generate upcoming highlights
+            const upcomingContainer = document.getElementById("upcoming-highlights");
+            upcomingContainer.innerHTML = "";
+            
+            // Add upcoming days (including today for context)
+            for (let i = 0; i < TOTAL_CAMPAIGN_DAYS; i++) {
+                const highlight = dailyHighlights[i];
+                const dayElement = document.createElement("div");
+                dayElement.className = "upcoming-day";
+                
+                // Mark today, next day, and future days
+                if (i === currentCampaignDay - 1) {
+                    dayElement.classList.add("current");
+                } else if (i === currentCampaignDay) {
+                    dayElement.classList.add("next");
+                } else if (i > currentCampaignDay) {
+                    dayElement.classList.add("future");
+                }
+                
+                // For past days, we show them as completed
+                if (i < currentCampaignDay - 1) {
+                    dayElement.innerHTML = `
+                        <div class="upcoming-day-number"><i class="fas fa-check-circle" style="color: #28a745; margin-right: 5px;"></i> Day ${highlight.day}</div>
+                        <div class="upcoming-day-title" style="color: #666;">${highlight.title}</div>
+                        <div class="upcoming-day-description">${highlight.description}</div>
+                    `;
+                } else {
+                    // For current and future days
+                    const dayStatus = i === currentCampaignDay - 1 ? "Today" : 
+                                     i === currentCampaignDay ? "Tomorrow" : 
+                                     `Day ${highlight.day}`;
+                    
+                    dayElement.innerHTML = `
+                        <div class="upcoming-day-number">${dayStatus}</div>
+                        <div class="upcoming-day-title">${highlight.title}</div>
+                        <div class="upcoming-day-description">${highlight.description}</div>
+                    `;
+                }
+                
+                upcomingContainer.appendChild(dayElement);
+            }
+        }
+        
+        // Toggle upcoming highlights visibility
+        const toggleButton = document.getElementById("toggle-upcoming");
+        const upcomingHighlights = document.getElementById("upcoming-highlights");
+        let isExpanded = false;
+        
+        toggleButton.addEventListener("click", function() {
+            isExpanded = !isExpanded;
+            upcomingHighlights.classList.toggle("expanded", isExpanded);
+            
+            if (isExpanded) {
+                toggleButton.innerHTML = '<i class="fas fa-chevron-up"></i> Hide All';
+            } else {
+                toggleButton.innerHTML = '<i class="fas fa-chevron-down"></i> Show All';
+            }
+        });
+        
+        // Book Tour Button Functionality
+        document.getElementById('bookTourBtn').addEventListener('click', function() {
+            // In a real implementation, this would open a booking modal or redirect to a booking page
+            alert("Thank you for your interest in Angels Junior School!\n\nYou are being redirected to our tour booking page. Please select your preferred date and time for a personalized campus visit.");
+            
+            // Simulate redirect after a delay
+            setTimeout(() => {
+                // This would be window.location.href = "https://angelsjunior.edu/book-tour";
+                console.log("Redirecting to tour booking page...");
+            }, 500);
+        });
+        
+        // Simulate advancing to next day (for demo purposes only)
+        // In real implementation, this would be based on actual date
+        function advanceToNextDay() {
+            if (currentCampaignDay < TOTAL_CAMPAIGN_DAYS) {
+                currentCampaignDay++;
+                updateCampaignDisplay();
+            }
+        }
+        
+        // For demo: Add a button to simulate day advance (not in production)
+        const demoAdvanceButton = document.createElement("button");
+        demoAdvanceButton.textContent = "Demo: Advance to Next Day";
+        demoAdvanceButton.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffcc00;
+            color: #1a4a8f;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        `;
+        demoAdvanceButton.addEventListener("click", advanceToNextDay);
+        document.body.appendChild(demoAdvanceButton);
+        
+        // Initialize the campaign display
+        updateCampaignDisplay();
+    </script>
+</body>
+</html>
